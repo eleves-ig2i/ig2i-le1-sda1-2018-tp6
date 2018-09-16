@@ -1,0 +1,60 @@
+Ce dossier contient les fichiers nécessaires à l'élaboration de la bibliothèque pour le TP6.
+
+________________________________________________________________________________________________
+
+APPELS DES LIBRAIRIES :
+Les appels des fichiers *.h se font de la manière suivante :
+
+main.c => biblio.h et time.h  (time.h est nécessaire pour obtenir la date d'aujourd'hui)
+biblio.c => livre.h
+livre.c => es.h et date.h
+es.h => stdio.h et string.h 
+date.h => stdio.h
+
+Au final, main.c appelle les librairies suivantes :
+stdio.h et string.h, es.h et date.h, livre.h, biblio.h et time.h
+
+
+___________________________________________________________________________________________________________
+
+LISTE DES FICHIERS :
+
+baseLivres => fichier binaire contenant la bibliothèque, utilisé pour la sauvegarde et le chargement de cette dernière.
+
+Bibliotheque.txt => fichier texte contenant la bibliotheque, utile lorsqu'on veut regarder cette dernière sans vouloir exécuter le fichier main.
+
+*.h => Librairies contenant les programmes et structures nécessaires à l'utilisation de la bibliothèque. 
+PS : Toutes les fonctions de date.h n'ont pas été utilisées : la librairie a été élaborée avant le TP6.
+
+*.c => Code source des librairies utilisés par l'exécutable.
+
+makefile => exécutable permettant de compiler le code source, de supprimer les fichiers objets ou l'exécutable main.
+
+main => exécutable qui lance la bibliotheque.
+
+____________________________________________________________________________________________________________
+
+NOTE SUR LA ROBUSTESSE DU PROGRAMME :
+
+Si la bibliothèque est vide ( B.Ctaille == 0 ) , il est impossible d'accéder aux menus d'affichage, de recherche,de modification et de suppression. 
+Pour faire un essai avec une bibliothèque vide, commenter les lignes 134 (chargement(&B) ) et 280 ( sauvegarde(&B) ).
+
+Si la bibliothèque est pleine (B.Ctaille == CAPACITE_BIBLIO avec CAPACITE_BIBLIO une constante déclarée dans biblio.h), on ne peut pas ajouter de livres (cf ligne 23 du fichier biblio.c).
+
+Pour les commentaires spécifiques aux fonctions de vérification saisie, se référer aux commentaires des fonctions prévues à cet effet.
+
+______________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
